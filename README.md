@@ -33,6 +33,21 @@ function fancyAlert(arg) {
   }
 }
 ```
+```php
+	if (!empty($node_116->field_image['und'][0]['uri'])) {
+		$uri = $node_116->field_image['und'][0]['uri'];
+		// sans style défini (= format original de l'upload)
+		$bandeau_image = theme('image', array('path' => $uri));
+		$variables['bandeau'] = $bandeau_image;
+		// variable printée dans ../templates/node/node--article.tpl.php
+	} else { $variables['bandeau'] = ''; }
+	// texte du bandeau
+	if (!empty($node_116->body['und'][0]['safe_value'])) {
+		$bandeau_texte = $node_116->body['und'][0]['safe_value'];
+		$variables['bandeau_textes'] = $bandeau_texte;
+		// variable printée dans ../templates/node/node--article.tpl.php
+	} else { $variables['bandeau_texte'] = ''; }
+```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
